@@ -1,0 +1,54 @@
+# # Colors
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+if ( `uname` == "FreeBSD") then
+    alias ls        ls -G
+else if (`uname` == "OpenBSD") then
+    alias ls        ls
+else
+    alias ls        ls --color=auto
+endif
+
+alias grep      grep --color=auto
+
+alias lsa       ls -a
+alias lsl       ls -l
+alias lsh       ls -lh
+alias lsi       ls -il
+alias lsr       ls -R
+
+# # Shortcuts
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+#alias scheme    /usr/local/bin/scheme48
+
+alias libd      musicpd ~/.mpd.lib/mpd.conf
+alias lib       ncmpcpp -p 6601 -c ~/.ncmpcpp.lib/config
+
+# # Git
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+alias gs        git status
+alias gc        git commit
+alias gd        git diff
+alias gp        git push
+alias gsu       git submodule update --init
+
+# # Radio
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# SomaFm Stations
+alias lush      mplayer "http://mp1.somafm.com:8800"
+alias drone     mplayer "http://mp2.somafm.com:8002"
+alias agent     mplayer "http://voxsc1.somafm.com:8002"
+alias beat      mplayer "http://voxsc1.somafm.com:8384"
+alias cliq      mplayer "http://mp2.somafm.com:2668"
+
+# RTL Deux
+alias rtl2      mplayer "http://streaming.radio.rtl.fr/rtl2-1-44-96"
+
+# BBC
+alias bbc1      mplayer -playlist "http://www.bbc.co.uk/radio/listen/live/r1.asx"
+alias bbc5      mplayer -playlist "http://www.bbc.co.uk/radio/listen/live/r5l.asx"
+alias bbcm      mplayer -playlist "http://www.bbc.co.uk/radio/listen/live/bbcmanchester.asx"   
+alias bbcn      mplayer -playlist "http://www.bbc.co.uk/worldservice/meta/live/nb/eieuk_au_nb.asx"
+
+alias shot      scrot -s 
+
+# vim: set filetype=tcsh : #

@@ -1,0 +1,31 @@
+#!/usr/bin/env perl
+
+use Cwd;
+
+my @files = `ls -1`;
+
+my $symcmd = "ln -s";
+my $home = $ENV{"HOME"} . "/";
+
+
+chomp($home);
+
+foreach (@files) {
+	if (!(/README.md$/) && !(/install/) && !(/scripts/)) {
+
+        my $dotfile = "." . $_;
+		chomp $dotfile;
+		my $oldfile = $_;
+		chomp $oldfile;
+       
+        unless (-e $home . $dotfile) {
+		    my $cmd = "ln -s " . cwd() . "/" . $oldfile . " " . $home . $dotfile . "\n";
+		    system ($cmd);
+	    }
+    }    
+}
+
+unless ( -e $home . ".bin") {
+    my $c = "ln -s " . cwd() . "/scripts " . "~/.bin\n";
+    system($c);
+}
